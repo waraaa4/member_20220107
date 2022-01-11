@@ -62,5 +62,10 @@ public class MemberServiceImpl implements MemberService {
 //        return MemberDetailDTO.toMemberDetailDTO(mr.findById(memberId).get());
     }
 
+    @Override
+    public void deleteById(Long memberId) {
+        mr.deleteById(memberId);
+    }
+
 
 }

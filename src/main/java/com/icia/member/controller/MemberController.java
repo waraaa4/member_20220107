@@ -69,6 +69,12 @@ public class MemberController {
         return "member/findById";
     }
 
+    @PostMapping("{memberId}")
+    public @ResponseBody MemberDetailDTO detail(@PathVariable Long memberId) {
+        MemberDetailDTO member = ms.findById(memberId);
+        return member;
+    }
+
     // 회원삭제 (/member/delete/1~.. 등등 숫자로만 확인)
     @GetMapping("delete/{memberId}")
     public String deleteById(@PathVariable("memberId") Long memberId) {
